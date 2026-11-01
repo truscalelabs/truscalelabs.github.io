@@ -1,0 +1,225 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Commerce-Ready 3D documentation | Truscale Labs</title>
+<meta name="description" content="How to install and use Commerce-Ready 3D, the Blender add-on that makes product models ready for Amazon and Shopify: panel options, batch mode, platform requirements and FAQ.">
+<link rel="canonical" href="https://truscalelabs.github.io/commerce-ready-3d/docs/">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Truscale Labs">
+<meta property="og:title" content="Commerce-Ready 3D documentation | Truscale Labs">
+<meta property="og:description" content="How to install and use Commerce-Ready 3D, the Blender add-on that makes product models ready for Amazon and Shopify: panel options, batch mode, platform requirements and FAQ.">
+<meta property="og:url" content="https://truscalelabs.github.io/commerce-ready-3d/docs/">
+<meta property="og:image" content="https://truscalelabs.github.io/assets/img/og.jpg">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="theme-color" content="#e6e7e9">
+<link rel="icon" href="/favicon.svg" type="image/svg+xml">
+<link rel="preload" href="/assets/fonts/archivo-variable.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="stylesheet" href="/assets/css/site.css?v=202611011952">
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+<header class="site-head">
+  <div class="shell">
+    <a class="brand" href="/" aria-label="Truscale Labs, home"><svg viewBox="0 0 32 32" aria-hidden="true"><rect width="32" height="32" rx="7" fill="#212328"/><rect x="5.5" y="19" width="21" height="5.5" rx="1.2" fill="#ffcc1f"/><path d="M8 19v-8M12 19v-4.5M16 19v-8M20 19v-4.5M24 19v-8" stroke="#fff" stroke-width="1.7" stroke-linecap="round"/></svg><span>Truscale Labs</span></a>
+    <nav class="site-nav" aria-label="Main">
+      <a href="/#check">Check a file</a>
+      <a class="opt" href="/commerce-ready-3d/docs/" aria-current="page">Docs</a>
+      <a href="mailto:truscalelabs@gmail.com">Contact</a>
+    </nav>
+  </div>
+</header>
+<main id="main" class="shell">
+<div class="docs">
+  <nav class="toc" aria-label="On this page"><p>On this page</p><ol><li><a href="#installation">Installation</a></li><li><a href="#quick-start">Quick start</a></li><li><a href="#panel-options">Panel options</a></li><li><a href="#buttons">Buttons</a></li><li><a href="#reading-the-result">Reading the result</a></li><li><a href="#batch-mode">Batch mode</a></li><li><a href="#checking-a-glb-without-blender">Checking a GLB without Blender</a></li><li><a href="#changing-platform-limits-for-a-whole-team">Changing platform limits for a whole team</a></li><li><a href="#platform-requirements">Platform requirements</a></li><li><a href="#faq">FAQ</a></li></ol></nav>
+  <article class="prose">
+    <h1>Commerce-Ready 3D documentation</h1>
+    <p class="lead">Version 1.0.0, for Blender 4.2 and newer. To try the checks on a file first, use the <a href="/#check">free checker</a>.</p>
+    <h2 id="installation">Installation</h2>
+<ol>
+<li>Download the ZIP file. Don't unpack it.</li>
+<li>In Blender, open <strong>Edit &gt; Preferences &gt; Get Extensions</strong>.</li>
+<li>Click the arrow in the top-right corner and choose <strong>Install from Disk</strong>, then pick the ZIP.</li>
+<li>Open the 3D Viewport sidebar (press <strong>N</strong>) and click the <strong>Commerce Ready</strong> tab.</li>
+</ol>
+<p>Requires Blender 4.2 or newer. The add-on works offline and never connects to the internet.</p>
+<h2 id="quick-start">Quick start</h2>
+<ol>
+<li>Open or import your product model.</li>
+<li>In the <strong>Commerce Ready</strong> tab, choose the <strong>Platform</strong>: Amazon or Shopify.</li>
+<li>Select the product's objects. Child objects are included automatically.</li>
+<li>Press <strong>Check</strong> to see what fails without changing anything.</li>
+<li>Set the options below if needed, then press <strong>Make Ready and Export</strong>.</li>
+<li>Press <strong>Open Report</strong> to see the result, or <strong>Open Folder</strong> to find the GLB.</li>
+</ol>
+<h2 id="panel-options">Panel options</h2>
+<p><strong>Platform.</strong> The rules to check and fix against.</p>
+<p><strong>Objects.</strong> <em>Selected</em> uses the selected objects and their children. <em>All visible</em> uses every visible object in the scene.</p>
+<p><strong>Product front.</strong> The Blender view in which you see the front of the product: Front, Back, Right or Left. The add-on turns the product so its front faces the shopper.</p>
+<p><strong>Stand up.</strong> For models that lie on their side or back. Choose the rotation around X that makes the product upright: +90, -90 or 180 degrees. Press <strong>Check</strong> afterwards and look at the reported height.</p>
+<p><strong>Built in.</strong> The unit the model was made in: meters, centimeters, millimeters, inches or feet. Marketplaces read GLB files in meters, so a bottle built in centimeters would otherwise show up 26 meters tall. If your scene's unit scale isn't 1, the panel shows a warning as a reminder.</p>
+<p><strong>Real size.</strong> Instead of converting units, you can scale the product so that its height, width, depth or longest side equals a size you enter. Use this when you know the real product's dimensions.</p>
+<p><strong>One object.</strong> Shopify recommends a single object, so <em>As recommended</em> joins parts for Shopify and keeps them separate for Amazon. <em>Join</em> and <em>Keep parts</em> override that.</p>
+<p><strong>Output.</strong> The folder for the GLB and the reports. The default <code>//commerce_ready/</code> means a folder next to your .blend file. Save the .blend first, or choose an absolute folder.</p>
+<p><strong>Advanced limits.</strong> Override the platform's triangle limit, largest and smallest texture size, and target file size. 0 keeps the platform default; -1 removes the limit.</p>
+<h2 id="buttons">Buttons</h2>
+<p><strong>Check</strong> exports a temporary copy of the selection and checks it, without fixing anything. Use it to see where a model stands.</p>
+<p><strong>Make Ready and Export</strong> fixes the copy, exports the GLB, checks the finished file and writes the reports.</p>
+<p>After either button, the panel shows the overall result, each check with its value, and the list of changes. <strong>Open Report</strong> opens the HTML report in your browser, and <strong>Open Folder</strong> opens the output folder.</p>
+<h2 id="reading-the-result">Reading the result</h2>
+<ul>
+<li><strong>Ready</strong>: every requirement passes.</li>
+<li><strong>Ready, with recommendations</strong>: the file will be accepted, but the platform recommends something more (for example one material per model on Shopify). The report says what.</li>
+<li><strong>Not ready</strong>: at least one requirement fails, and the note explains what to change. This usually happens when something can't be fixed automatically, such as a texture that can't be read.</li>
+</ul>
+<p>The report also has a short <strong>Check by eye before upload</strong> list, for things software can't judge, such as whether the size matches the real product.</p>
+<h2 id="batch-mode">Batch mode</h2>
+<p>Run Blender from a terminal with the <code>-c commerce_ready</code> command:</p>
+<pre><code>blender -c commerce_ready --platform amazon --output ready/ models/
+blender -c commerce_ready -p shopify -o ready/ --unit cm --join yes models/
+blender -c commerce_ready -p amazon -o checks/ --check-only models/
+</code></pre>
+<p>On Windows, use the full path to <code>blender.exe</code>, for example <code>"C:\Program Files\Blender Foundation\Blender 4.2\blender.exe" -c commerce_ready ...</code>.</p>
+<table>
+<thead>
+<tr>
+<th>Option</th>
+<th>Meaning</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>-p</code>, <code>--platform</code></td>
+<td><code>amazon</code> or <code>shopify</code> (required)</td>
+</tr>
+<tr>
+<td><code>-o</code>, <code>--output</code></td>
+<td>output folder (required)</td>
+</tr>
+<tr>
+<td><code>-r</code>, <code>--recursive</code></td>
+<td>also search subfolders</td>
+</tr>
+<tr>
+<td><code>--check-only</code></td>
+<td>check files without fixing or exporting</td>
+</tr>
+<tr>
+<td><code>--front</code></td>
+<td><code>front</code>, <code>back</code>, <code>right</code> or <code>left</code>: the view showing the product's front</td>
+</tr>
+<tr>
+<td><code>--up-fix</code></td>
+<td><code>none</code>, <code>x90</code>, <code>x-90</code> or <code>x180</code>: stand up a lying model</td>
+</tr>
+<tr>
+<td><code>--unit</code></td>
+<td><code>m</code>, <code>cm</code>, <code>mm</code>, <code>in</code> or <code>ft</code>: the units the model was built in</td>
+</tr>
+<tr>
+<td><code>--height</code>, <code>--width</code>, <code>--depth</code>, <code>--longest</code></td>
+<td>scale so this dimension equals the given meters</td>
+</tr>
+<tr>
+<td><code>--join</code></td>
+<td><code>auto</code>, <code>yes</code> or <code>no</code></td>
+</tr>
+<tr>
+<td><code>--max-triangles</code>, <code>--texture-max</code>, <code>--texture-min</code>, <code>--target-mb</code></td>
+<td>override platform limits</td>
+</tr>
+<tr>
+<td><code>--jpeg-quality</code></td>
+<td>JPEG quality from 1 to 100 (default 90)</td>
+</tr>
+<tr>
+<td><code>-q</code>, <code>--quiet</code></td>
+<td>print only the final summary</td>
+</tr>
+</tbody>
+</table>
+<p>Supported input files: .glb, .gltf, .fbx, .obj, .stl, .ply, .usd, .usda, .usdc, .usdz and .blend.</p>
+<p>The options apply to every file in the run, so put models that need different settings (for example, different units) in separate folders.</p>
+<p>Each model gets <code>name_platform.glb</code>, <code>name_platform.html</code> and <code>name_platform.json</code>. The folder gets <code>summary.html</code> and <code>summary.json</code>.</p>
+<p>Exit codes: <strong>0</strong> means every file is ready (recommendations are allowed), <strong>2</strong> means at least one file is not ready, and <strong>1</strong> means an error, such as a file that couldn't be opened.</p>
+<h2 id="checking-a-glb-without-blender">Checking a GLB without Blender</h2>
+<p>The checker is plain Python 3 with no dependencies, so it can run on a server or in CI. Unzip the add-on ZIP into a folder, then run from that folder:</p>
+<pre><code>python glb_inspect.py model.glb --platform amazon
+python glb_inspect.py model1.glb model2.glb --platform shopify --json
+</code></pre>
+<h2 id="changing-platform-limits-for-a-whole-team">Changing platform limits for a whole team</h2>
+<p>Put the limits in a JSON file and point the <code>COMMERCE_READY_PROFILES</code> environment variable at it. The panel, batch mode and the checker all read it:</p>
+<pre><code class="language-json">{&quot;amazon&quot;: {&quot;max_triangles&quot;: 100000, &quot;texture_max&quot;: 2048}}
+</code></pre>
+    <h2 id="platform-requirements">Platform requirements</h2>
+    <p>What each profile checks. "Rejected" means the platform turns the file down; "Recommended" means it accepts the file but suggests the change.</p>
+    <h3 id="req-amazon">Amazon (View in 3D, View in Your Room)</h3>
+<table><thead><tr><th>Requirement</th><th>If missed</th></tr></thead><tbody>
+<tr><td>A binary glTF 2.0 file (.glb)</td><td><span class="sev fail">Rejected</span></td></tr>
+<tr><td>The file contains geometry</td><td><span class="sev fail">Rejected</span></td></tr>
+<tr><td>Up to 200,000 triangles</td><td><span class="sev fail">Rejected</span></td></tr>
+<tr><td>Every texture can be read</td><td><span class="sev fail">Rejected</span></td></tr>
+<tr><td>Textures in PNG or JPEG</td><td><span class="sev fail">Rejected</span></td></tr>
+<tr><td>Textures no larger than 4096 px</td><td><span class="sev fail">Rejected</span></td></tr>
+<tr><td>Textures at least 2048 px</td><td><span class="sev fail">Rejected</span></td></tr>
+<tr><td>Square textures</td><td><span class="sev fail">Rejected</span></td></tr>
+<tr><td>Texture sizes that are powers of two (512, 1024, 2048, 4096)</td><td><span class="sev fail">Rejected</span></td></tr>
+<tr><td>A base color texture on every material</td><td><span class="sev fail">Rejected</span></td></tr>
+<tr><td>A metallic-roughness texture on every material</td><td><span class="sev fail">Rejected</span></td></tr>
+<tr><td>No animations</td><td><span class="sev fail">Rejected</span></td></tr>
+<tr><td>No cameras</td><td><span class="sev fail">Rejected</span></td></tr>
+<tr><td>No lights</td><td><span class="sev fail">Rejected</span></td></tr>
+<tr><td>No rigs (skins)</td><td><span class="sev fail">Rejected</span></td></tr>
+<tr><td>No morph targets (shape keys)</td><td><span class="sev fail">Rejected</span></td></tr>
+<tr><td>Only these glTF extensions: KHR_materials_transmission, KHR_texture_transform</td><td><span class="sev fail">Rejected</span></td></tr>
+<tr><td>No required extensions outside that list</td><td><span class="sev fail">Rejected</span></td></tr>
+<tr><td>The lowest point rests on the ground (Y = 0)</td><td><span class="sev fail">Rejected</span></td></tr>
+<tr><td>Centered on the origin</td><td><span class="sev fail">Rejected</span></td></tr>
+<tr><td>Real-world size, between 1 cm and 10 m</td><td><span class="sev warn">Recommended</span></td></tr>
+<tr><td>Single-sided materials</td><td><span class="sev warn">Recommended</span></td></tr>
+</tbody></table>
+<h3 id="req-shopify">Shopify (3D models and AR)</h3>
+<table><thead><tr><th>Requirement</th><th>If missed</th></tr></thead><tbody>
+<tr><td>A binary glTF 2.0 file (.glb)</td><td><span class="sev fail">Rejected</span></td></tr>
+<tr><td>The file contains geometry</td><td><span class="sev fail">Rejected</span></td></tr>
+<tr><td>About 4 MB or less</td><td><span class="sev warn">Recommended</span></td></tr>
+<tr><td>Every texture can be read</td><td><span class="sev fail">Rejected</span></td></tr>
+<tr><td>Textures in PNG or JPEG</td><td><span class="sev warn">Recommended</span></td></tr>
+<tr><td>Textures no larger than 2048 px</td><td><span class="sev warn">Recommended</span></td></tr>
+<tr><td>Occlusion packed into the metallic-roughness texture</td><td><span class="sev warn">Recommended</span></td></tr>
+<tr><td>No animations</td><td><span class="sev warn">Recommended</span></td></tr>
+<tr><td>No cameras</td><td><span class="sev warn">Recommended</span></td></tr>
+<tr><td>No lights</td><td><span class="sev warn">Recommended</span></td></tr>
+<tr><td>The lowest point rests on the ground (Y = 0)</td><td><span class="sev warn">Recommended</span></td></tr>
+<tr><td>Centered on the origin</td><td><span class="sev warn">Recommended</span></td></tr>
+<tr><td>Real-world size, between 1 cm and 10 m</td><td><span class="sev warn">Recommended</span></td></tr>
+<tr><td>1 object</td><td><span class="sev warn">Recommended</span></td></tr>
+<tr><td>1 material where possible</td><td><span class="sev warn">Recommended</span></td></tr>
+</tbody></table>
+<p>Amazon publishes its exact 3D requirements inside Seller Central, which needs a seller login. The Amazon values above follow the publicly reported Seller Central requirements; if your page shows different numbers, change them under <b>Advanced limits</b>. Shopify's values follow the <a href="https://help.shopify.com/partners/resources/creating-3d-models/3d-model-standards-checklist">Shopify 3D model standards checklist</a>.</p>
+    <h2 id="faq">FAQ</h2>
+        <details><summary>Which Blender versions are supported?</summary><div><p>4.2 and newer. It is tested on 4.2, 4.5, 5.0 and 5.2. It uses the extension system introduced in 4.2, so it doesn't install in 4.1 or older.</p></div></details>
+    <details><summary>Will it change my scene or my .blend file?</summary><div><p>No. It works on a copy in a temporary scene and removes everything it created when it's done. Your objects, materials and images stay as they were.</p></div></details>
+    <details><summary>My product shows up huge or tiny. What do I do?</summary><div><p>Set <strong>Built in</strong> to the units the model was made in, or use <strong>Real size</strong> and enter the product's real height. The report shows the final size in centimeters and inches so you can compare it with the real item.</p></div></details>
+    <details><summary>The product faces the wrong way in the viewer.</summary><div><p>Set <strong>Product front</strong> to the Blender view in which you see the front of the product. For a model lying on its back, use <strong>Stand up</strong>.</p></div></details>
+    <details><summary>My Seller Central page shows different Amazon limits.</summary><div><p>Change them under <strong>Advanced limits</strong>, or with <code>--max-triangles</code>, <code>--texture-max</code> and <code>--texture-min</code> in batch mode. To set them once for everyone, use a <code>COMMERCE_READY_PROFILES</code> file (see Documentation).</p></div></details>
+    <details><summary>Why is the Shopify result &quot;Ready, with recommendations&quot;?</summary><div><p>Shopify accepts the file, but its checklist recommends more, for example one material per model, or occlusion packed into the metallic-roughness texture. The report names each recommendation. They don't block the upload.</p></div></details>
+    <details><summary>Does it use Draco or meshopt compression?</summary><div><p>No. Files stay standard glTF so every viewer accepts them. File size is reduced through texture size, JPEG conversion and triangle count instead.</p></div></details>
+    <details><summary>Can it reduce triangles without ruining my model?</summary><div><p>It uses Blender's Decimate modifier and only reduces as much as the limit requires. For hero products where every edge matters, a hand-made low-poly version will look better. The add-on tells you when it reduced triangles and by how much.</p></div></details>
+    <details><summary>Can I use it in an automated pipeline?</summary><div><p>Yes. Batch mode runs without the interface, returns exit codes and writes a JSON report for each model plus a summary. The standalone checker needs only Python.</p></div></details>
+    <details><summary>Does it send my models anywhere?</summary><div><p>No. It works fully offline. The only permission it asks Blender for is file access, to read your models and write the results.</p></div></details>
+    <details><summary>Will you add other platforms?</summary><div><p>Version 1.0 covers Amazon and Shopify. Tell us which platform you need in the product's ratings or messages. That decides what comes next.</p></div></details>
+    <details><summary>I found a model it handles badly.</summary><div><p>Send us the HTML report and, if you can, the model. The report includes the Blender version, the platform profile and every step taken, which is usually enough to reproduce the problem.</p></div></details>
+  </article>
+</div>
+</main>
+<footer class="site-foot">
+  <div class="shell">
+    <div><p><strong>Truscale Labs</strong></p><p>Blender add-ons for product visualization.</p><p>&copy; 2026 Truscale Labs</p></div>
+    <div><p><a href="/#check">Check a GLB file</a></p><p><a href="/commerce-ready-3d/docs/">Documentation</a></p><p><a href="/commerce-ready-3d/sample-report.html">Sample report</a></p></div>
+    <div><p><a href="mailto:truscalelabs@gmail.com">truscalelabs@gmail.com</a></p><p class="small">Amazon and Shopify are trademarks of their owners. Truscale Labs is not affiliated with either.</p><p class="small">Demo models: Khronos glTF Sample Assets (CC0).</p></div>
+  </div>
+</footer>
+</body>
+</html>

@@ -1,0 +1,257 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Commerce-Ready 3D: Amazon and Shopify GLB checker and fixer for Blender | Truscale Labs</title>
+<meta name="description" content="A Blender add-on that checks product models against Amazon and Shopify 3D requirements, fixes what fails and exports a GLB with a report. Check your own GLB free in the browser.">
+<link rel="canonical" href="https://truscalelabs.github.io/">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Truscale Labs">
+<meta property="og:title" content="Commerce-Ready 3D: product models Amazon and Shopify accept">
+<meta property="og:description" content="Check a GLB against Amazon and Shopify 3D requirements in your browser. The Blender add-on fixes what fails.">
+<meta property="og:url" content="https://truscalelabs.github.io/">
+<meta property="og:image" content="https://truscalelabs.github.io/assets/img/og.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="theme-color" content="#e6e7e9">
+<link rel="icon" href="/favicon.svg" type="image/svg+xml">
+<link rel="preload" href="/assets/fonts/archivo-variable.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="stylesheet" href="/assets/css/site.css?v=202611011952">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "SoftwareApplication",
+  "name": "Commerce-Ready 3D",
+  "applicationCategory": "DesignApplication",
+  "operatingSystem": "Windows, macOS, Linux (Blender 4.2 or newer)",
+  "softwareVersion": "1.0.0",
+  "description": "Blender add-on that checks product models against Amazon and Shopify 3D requirements, fixes what fails and exports a GLB with a report.",
+  "url": "https://truscalelabs.github.io/",
+  "publisher": { "@type": "Organization", "name": "Truscale Labs", "email": "truscalelabs@gmail.com", "url": "https://truscalelabs.github.io/" }
+}
+</script>
+<script type="module" src="/assets/vendor/model-viewer.min.js"></script>
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+
+<header class="site-head">
+  <div class="shell">
+    <a class="brand" href="/" aria-label="Truscale Labs, home"><svg viewBox="0 0 32 32" aria-hidden="true"><rect width="32" height="32" rx="7" fill="#212328"/><rect x="5.5" y="19" width="21" height="5.5" rx="1.2" fill="#ffcc1f"/><path d="M8 19v-8M12 19v-4.5M16 19v-8M20 19v-4.5M24 19v-8" stroke="#fff" stroke-width="1.7" stroke-linecap="round"/></svg><span>Truscale Labs</span></a>
+    <nav class="site-nav" aria-label="Main">
+      <a href="#check">Check a file</a>
+      <a class="opt" href="/commerce-ready-3d/docs/">Docs</a>
+      <a href="mailto:truscalelabs@gmail.com">Contact</a>
+    </nav>
+  </div>
+</header>
+
+<main id="main">
+
+<section class="hero shell" aria-labelledby="hero-title">
+  <h1 class="display" id="hero-title">Pass Amazon and Shopify 3D review on the first upload</h1>
+  <div class="hero-text">
+    <p class="lead">Commerce-Ready 3D is a Blender add-on. It checks a product model against the platform's 3D requirements, fixes what fails and exports a GLB with a report you can hand to your client.</p>
+    <div class="actions">
+      <a class="btn" href="#check">Check a GLB file</a>
+      <span class="status-note">Coming soon to Superhive</span>
+    </div>
+  </div>
+
+  <div class="stage">
+    <div class="units seg" role="group" aria-label="Units">
+      <button type="button" data-unit="cm" aria-pressed="true">cm</button>
+      <button type="button" data-unit="in" aria-pressed="false">in</button>
+    </div>
+    <model-viewer id="hero-model" src="/assets/models/bottle.glb" poster="/assets/img/bottle-poster-desk.webp"
+      alt="3D model of a water bottle, 26 centimeters tall, exported for Shopify by Commerce-Ready 3D"
+      camera-controls disable-zoom touch-action="pan-y" interaction-prompt="none"
+      camera-orbit="28deg 72deg 0.72m" min-camera-orbit="auto auto 0.72m" max-camera-orbit="auto auto 0.72m" field-of-view="30deg" min-field-of-view="30deg" max-field-of-view="30deg"
+      shadow-intensity="1" shadow-softness="0.85" exposure="1.15" environment-image="neutral" tone-mapping="agx"
+      ar ar-modes="webxr scene-viewer quick-look" ar-scale="fixed" loading="eager" reveal="auto">
+      <button class="dot" slot="hotspot-dot+X-Y+Z" data-position="1 -1 1" data-normal="1 0 0" tabindex="-1"></button>
+      <button class="dim" slot="hotspot-dim+X-Y" data-position="1 -1 0" data-normal="1 0 0" data-axis="D" tabindex="-1"></button>
+      <button class="dot" slot="hotspot-dot+X-Y-Z" data-position="1 -1 -1" data-normal="1 0 0" tabindex="-1"></button>
+      <button class="dim" slot="hotspot-dim+X-Z" data-position="1 0 -1" data-normal="1 0 0" data-axis="H" tabindex="-1"></button>
+      <button class="dot" slot="hotspot-dot+X+Y-Z" data-position="1 1 -1" data-normal="0 1 0" tabindex="-1"></button>
+      <button class="dim" slot="hotspot-dim+Y-Z" data-position="0 -1 -1" data-normal="0 1 0" data-axis="W" tabindex="-1"></button>
+      <button class="dot" slot="hotspot-dot-X+Y-Z" data-position="-1 1 -1" data-normal="0 1 0" tabindex="-1"></button>
+      <button class="dim" slot="hotspot-dim-X-Z" data-position="-1 0 -1" data-normal="-1 0 0" data-axis="H" tabindex="-1"></button>
+      <button class="dot" slot="hotspot-dot-X-Y-Z" data-position="-1 -1 -1" data-normal="-1 0 0" tabindex="-1"></button>
+      <button class="dim" slot="hotspot-dim-X-Y" data-position="-1 -1 0" data-normal="-1 0 0" data-axis="D" tabindex="-1"></button>
+      <button class="dot" slot="hotspot-dot-X-Y+Z" data-position="-1 -1 1" data-normal="-1 0 0" tabindex="-1"></button>
+      <button class="ar-btn" slot="ar-button" type="button">See it in your room at real size</button>
+    </model-viewer>
+    <script>if (matchMedia("(max-width: 640px)").matches) document.getElementById("hero-model").setAttribute("poster", "/assets/img/bottle-poster-mob.webp");</script>
+    <svg id="dim-lines" class="dims" aria-hidden="true" xmlns="http://www.w3.org/2000/svg">
+      <line></line><line></line><line></line><line></line><line></line>
+    </svg>
+    <div class="stage-bar"><span class="stage-hint">Drag to turn the model</span></div>
+  </div>
+  <ul class="stage-facts" aria-label="About this file">
+    <li>The add-on's Shopify export of the problem file shown below</li>
+    <li><b class="num">3.05 MB</b> GLB</li>
+    <li><b class="num">86,464</b> triangles</li>
+    <li><b class="num" data-m="0.108548 0.108704 0.260363">10.9 × 10.9 × 26.0 cm</b> W × D × H</li>
+    <li><b class="num">15 of 15</b> Shopify checks pass</li>
+  </ul>
+</section>
+
+<section class="section shell" id="before-after" aria-labelledby="ba-title">
+  <div class="section-head">
+    <h2 id="ba-title">The same bottle, before and after</h2>
+    <p>This copy was exported the way problem files often arrive: built in centimeters, lying on its back and floating above the floor, with a camera, a light and a spin animation still in it. It fails 8 of Amazon's checks. With two settings and one click, all 22 pass.</p>
+  </div>
+  <div class="compare">
+    <figure class="compare-figure">
+      <img id="img-before" src="/assets/img/before.webp" width="1120" height="1040" alt="Render of the bottle before the fix: lying on its back, floating above the floor and away from the origin">
+      <img id="img-after" class="off" src="/assets/img/after.webp" width="1120" height="1040" alt="Render of the bottle after Make Ready and Export: upright, on the floor and centered on the origin" loading="lazy">
+    </figure>
+    <div>
+      <div class="compare-controls">
+        <div class="seg" role="group" aria-label="Show the file">
+          <button type="button" data-state="before" aria-pressed="true">Before</button>
+          <button type="button" data-state="after" aria-pressed="false">After Make Ready</button>
+        </div>
+        <span id="compare-verdict" class="verdict fail" aria-live="polite"></span>
+      </div>
+      <ul class="checks" id="compare-checks"></ul>
+      <details class="same"><summary id="same-summary"></summary><ul class="checks" id="compare-same"></ul></details>
+      <p class="compare-note">Settings used: Built in: Centimeters. Stand up: Rotate +90 X. Checked against the Amazon profile. The Khronos glTF Validator reports 0 errors and 0 warnings on the result.</p>
+    </div>
+  </div>
+</section>
+
+<section class="section shell" id="check" aria-labelledby="check-title">
+  <div class="section-head">
+    <h2 id="check-title">Check your own file</h2>
+    <p>This runs the add-on's checks in your browser, so the file never leaves your computer.</p>
+  </div>
+  <div class="checker" id="checker">
+    <div class="checker-top">
+      <div class="seg" role="group" aria-label="Platform">
+        <button type="button" data-platform="amazon" aria-pressed="true">Amazon</button>
+        <button type="button" data-platform="shopify" aria-pressed="false">Shopify</button>
+      </div>
+      <p>Requirements as of November 2026</p>
+    </div>
+    <div class="drop">
+      <p class="big">Drop a .glb file here</p>
+      <button class="btn" id="pick" type="button">Choose a file</button>
+      <input type="file" id="file" accept=".glb,model/gltf-binary" tabindex="-1" aria-hidden="true">
+      <p class="alt">No file at hand? <button class="linklike" id="sample" type="button" data-src="/assets/samples/avocado_from_studio.glb">Try the sample file</button>: an avocado exported in millimeters, with a camera, a light and an animation.</p>
+    </div>
+    <div class="result-error" role="alert" hidden></div>
+    <div class="result" hidden></div>
+    <p class="visually-hidden" aria-live="polite" id="checker-live"></p>
+  </div>
+</section>
+
+<section class="section shell" id="fixes" aria-labelledby="fixes-title">
+  <div class="section-head">
+    <h2 id="fixes-title">What it fixes</h2>
+    <p>Everything happens on a copy in a temporary scene. Your own scene and .blend file stay as they were.</p>
+  </div>
+  <dl class="fixes">
+    <div><dt>Leftovers from the scene</dt><dd>Removes cameras, lights, rigs, empties and animation. The current pose stays.</dd></div>
+    <div><dt>Real-world size</dt><dd>Converts from centimeters, millimeters, inches or feet, or scales the product to a height you enter.</dd></div>
+    <div><dt>Orientation</dt><dd>Turns the front toward the shopper and stands up a model that lies on its side. You choose both in the panel.</dd></div>
+    <div><dt>Position</dt><dd>Puts the lowest point on the floor and centers the product on the origin.</dd></div>
+    <div><dt>Triangle count</dt><dd>Reduces geometry only as far as the platform limit or file size target requires.</dd></div>
+    <div><dt>Textures</dt><dd>Resizes them, makes them square and power-of-two, converts them to PNG or JPEG, and creates missing base color and metallic-roughness maps.</dd></div>
+    <div><dt>Geometry</dt><dd>Applies modifiers and transforms, fixes mirrored parts and makes closed meshes single-sided.</dd></div>
+    <div><dt>File size</dt><dd>Exports again with smaller textures, then fewer triangles, until the file meets Shopify's 4 MB target.</dd></div>
+    <div><dt>Final check</dt><dd>Opens the finished GLB, checks it again and writes an HTML and a JSON report.</dd></div>
+  </dl>
+</section>
+
+<section class="section shell" id="batch" aria-labelledby="batch-title">
+  <div class="section-head">
+    <h2 id="batch-title">A whole folder in one command</h2>
+    <p>Batch mode runs from a terminal, without Blender's window. Each model gets a GLB and a report, the folder gets a summary page, and the exit code tells your script whether everything passed.</p>
+  </div>
+  <div class="batch">
+    <pre class="term"><code><span class="p">$</span> <span class="cmd">blender -c commerce_ready -p shopify -o ready/ models/</span>
+[commerce-ready] Processing Avocado.glb for Shopify
+[commerce-ready] Avocado: <span class="ok">PASS</span> (0.7s)
+[commerce-ready] Processing BoomBox.glb for Shopify
+[commerce-ready] BoomBox: <span class="ok">PASS</span> (0.7s)
+[commerce-ready] Processing ToyCar.glb for Shopify
+[commerce-ready] ToyCar: <span class="w">WARN</span> (2.3s)
+[commerce-ready] Processing WaterBottle.glb for Shopify
+[commerce-ready] WaterBottle: <span class="ok">PASS</span> (0.6s)
+[commerce-ready] Processing dense_vase.obj for Shopify
+[commerce-ready] dense_vase: <span class="ok">PASS</span> (7.8s)
+commerce-ready: 5 file(s) -&gt; 4 ready, 1 ready, with recommendations
+commerce-ready: summary report: ready/summary.html</code></pre>
+    <div>
+      <table class="sizes">
+        <caption class="visually-hidden">File sizes before and after the Shopify run</caption>
+        <thead><tr><th scope="col">Model</th><th scope="col">Source</th><th scope="col">GLB</th><th scope="col">Result</th></tr></thead>
+        <tbody><tr><td>Avocado.glb</td><td>8.1 MB</td><td class="to">0.7 MB</td><td>Ready</td></tr><tr><td>BoomBox.glb</td><td>10.6 MB</td><td class="to">1.5 MB</td><td>Ready</td></tr><tr><td>dense_vase.obj</td><td>32.2 MB</td><td class="to">2.9 MB</td><td>Ready</td></tr><tr><td>ToyCar.glb</td><td>5.4 MB</td><td class="to">3.2 MB</td><td>Ready, with recommendations</td></tr><tr><td>WaterBottle.glb</td><td>9.0 MB</td><td class="to">1.2 MB</td><td>Ready</td></tr></tbody>
+      </table>
+      <p class="batch-note">Source size includes the model's textures. "With recommendations" means Shopify accepts the file and suggests more. For the toy car: one material per model, and occlusion packed into one texture.</p>
+    </div>
+  </div>
+</section>
+
+<section class="section shell" id="report" aria-labelledby="report-title">
+  <div class="report">
+    <div>
+      <h2 id="report-title">A report for every file</h2>
+      <p class="muted">Send it along with the delivery. This is the real report for the bottle above.</p>
+      <ul>
+        <li>Each requirement, the value found and the limit</li>
+        <li>Every change the add-on made, in plain words</li>
+        <li>Final size in centimeters and inches, to compare with the real product</li>
+        <li>A short list of things to check by eye before upload</li>
+        <li>A JSON copy for spreadsheets and pipelines</li>
+      </ul>
+    </div>
+    <div class="frame">
+      <div class="frame-bar"><span>bottle_from_studio_amazon.html</span><a href="/commerce-ready-3d/sample-report.html" target="_blank" rel="noopener">Open in a new tab</a></div>
+      <iframe src="/commerce-ready-3d/sample-report.html" title="Sample report: the bottle checked for Amazon" loading="lazy"></iframe>
+    </div>
+  </div>
+</section>
+
+<section class="section shell" id="faq" aria-labelledby="faq-title">
+  <div class="section-head"><h2 id="faq-title">Questions</h2></div>
+  <div class="faq">
+    <details><summary>Which Blender versions are supported?</summary><div><p>4.2 and newer. It is tested on 4.2, 4.5, 5.0 and 5.2. It uses the extension system introduced in 4.2, so it doesn't install in 4.1 or older.</p></div></details>
+    <details><summary>Will it change my scene or my .blend file?</summary><div><p>No. It works on a copy in a temporary scene and removes everything it created when it's done. Your objects, materials and images stay as they were.</p></div></details>
+    <details><summary>My Seller Central page shows different Amazon limits.</summary><div><p>Change them under <strong>Advanced limits</strong>, or with <code>--max-triangles</code>, <code>--texture-max</code> and <code>--texture-min</code> in batch mode. To set them once for everyone, use a <code>COMMERCE_READY_PROFILES</code> file (see Documentation).</p></div></details>
+    <details><summary>Does it send my models anywhere?</summary><div><p>No. It works fully offline. The only permission it asks Blender for is file access, to read your models and write the results.</p></div></details>
+    <details><summary>Can I use it in an automated pipeline?</summary><div><p>Yes. Batch mode runs without the interface, returns exit codes and writes a JSON report for each model plus a summary. The standalone checker needs only Python.</p></div></details>
+    <details><summary>Will you add other platforms?</summary><div><p>Version 1.0 covers Amazon and Shopify. Tell us which platform you need in the product's ratings or messages. That decides what comes next.</p></div></details>
+  </div>
+  <p class="small muted" style="margin-top:18px">The <a href="/commerce-ready-3d/docs/">documentation</a> has the full manual, every panel option and the rest of the answers.</p>
+</section>
+
+<section class="section shell">
+  <div class="closing">
+    <div>
+      <h2>Coming soon to Superhive</h2>
+      <p>Commerce-Ready 3D will be sold on Superhive, the Blender marketplace. Until then, the checker on this page is free to use.</p>
+    </div>
+    <a class="btn quiet" href="/commerce-ready-3d/docs/">Read the documentation</a>
+  </div>
+</section>
+
+</main>
+
+<footer class="site-foot">
+  <div class="shell">
+    <div><p><strong>Truscale Labs</strong></p><p>Blender add-ons for product visualization.</p><p>&copy; 2026 Truscale Labs</p></div>
+    <div><p><a href="/#check">Check a GLB file</a></p><p><a href="/commerce-ready-3d/docs/">Documentation</a></p><p><a href="/commerce-ready-3d/sample-report.html">Sample report</a></p></div>
+    <div><p><a href="mailto:truscalelabs@gmail.com">truscalelabs@gmail.com</a></p><p class="small">Amazon and Shopify are trademarks of their owners. Truscale Labs is not affiliated with either.</p><p class="small">Demo models: Khronos glTF Sample Assets (CC0).</p></div>
+  </div>
+</footer>
+
+<script type="module" src="/assets/js/hero.js"></script>
+<script type="module" src="/assets/js/compare.js"></script>
+<script type="module" src="/assets/js/checker-ui.js"></script>
+</body>
+</html>

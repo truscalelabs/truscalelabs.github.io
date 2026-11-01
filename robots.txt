@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://truscalelabs.github.io/sitemap.xml
