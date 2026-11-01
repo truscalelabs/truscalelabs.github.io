@@ -25,7 +25,7 @@ export const BOTTLE = {
    ],
    "after": [
     "pass",
-    "193,029 triangles",
+    "193,030 triangles",
     ""
    ]
   },
@@ -39,7 +39,7 @@ export const BOTTLE = {
    ],
    "after": [
     "pass",
-    "193,029",
+    "193,030",
     ""
    ]
   },
@@ -258,7 +258,7 @@ export const BOTTLE = {
    "label": "Rests on the ground (Y = 0)",
    "before": [
     "fail",
-    "lowest point Y = 54.5572 m",
+    "lowest point Y = 54.5726 m",
     "Move the model so its lowest point sits at Y = 0."
    ],
    "after": [
@@ -286,8 +286,8 @@ export const BOTTLE = {
    "label": "Plausible real-world size",
    "before": [
     "warn",
-    "10.855 x 26.036 x 10.870 m (W x D x H)",
-    "The model is 10.855 x 26.036 x 10.870 m (W x D x H); check that it was built in meters at real size."
+    "10.855 x 26.036 x 10.855 m (W x D x H)",
+    "The model is 10.855 x 26.036 x 10.855 m (W x D x H); check that it was built in meters at real size."
    ],
    "after": [
     "pass",
@@ -316,10 +316,9 @@ export const BOTTLE = {
   "Applied modifiers and object transforms (all parts in real-world positions).",
   "Rotated +90 degrees around X so the product stands upright.",
   "Converted from centimeters to meters (scale x0.01).",
-  "Moved the product onto the ground and centered it on the origin (moved -0.3500, 0.5999, 0.3302 m).",
-  "Reduced triangles from 432,960 to 193,029 to stay within the platform limit of 199,000."
+  "Moved the product onto the ground and centered it on the origin (moved -0.3500, 0.6000, 0.3302 m).",
+  "Reduced triangles from 432,960 to 193,030 to stay within the platform limit of 199,000."
  ],
  "before_status": "fail",
- "after_status": "pass",
- "before_dims": null
+ "after_status": "pass"
 };
