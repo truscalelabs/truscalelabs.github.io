@@ -107,3 +107,11 @@ unitButtons.forEach((btn) => {
     });
   });
 });
+
+// Scene Viewer sends the visitor back here when the phone can't run AR.
+const arNote = document.querySelector("#ar-note");
+if (mv && arNote) {
+  mv.addEventListener("ar-status", (e) => {
+    if (e.detail.status === "failed") arNote.hidden = false;
+  });
+}
